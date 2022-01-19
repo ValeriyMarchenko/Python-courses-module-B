@@ -1,0 +1,42 @@
+def victory():
+    for i in range(3):
+        comb = []
+        for j in range(3):
+            comb.append(field[i][j])
+        if comb == ['X', 'X', 'X']:
+            print("Tic wins")
+            return True
+        elif comb == ['0', '0', '0']:
+            print("Tac wins")
+            return True
+    
+    for i in range(3):
+        comb = []
+        for j in range(3):
+            comb.append(field[j][i])
+        if comb == ['X', 'X', 'X']:
+            print("Tic wins")
+            return True
+        elif comb == ['0', '0', '0']:
+            print("Tac wins")
+            return True
+    
+    comb = []
+    for i in range(3):
+         comb.append(field[i][i])
+    if comb == ['X', 'X', 'X']:
+        print("Tic wins")
+        return True
+    elif comb == ['0', '0', '0']:
+        print("Tac wins")
+        return True
+
+    comb = []
+    for i in range(3):
+         comb.append(field[i][2 - i])
+    if comb == ['X', 'X', 'X']:
+        print("Tic wins")
+        return True
+    elif comb == ['0', '0', '0']:
+        print("Tac wins")
+        return True
